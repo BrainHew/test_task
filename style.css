@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px 5px 20px;
+    background-color: #1e1520;
+}
+
+.contact-info a{
+    color: white;
+    text-decoration: none;
+    margin: 10px 50px 10px 5px;
+}
+.contact-info img{
+    margin-bottom: -1px;
+}
+#copy{
+    cursor: pointer;
+    padding: 5px;
+    margin-bottom: -7px;
+}
+.notification {
+    position: fixed;
+    top: 60px;
+    right: 190px;
+    color: white;
+    padding: 10px;
+    background-color: #1e1520;
+    border: 1px solid white;
+    border-radius: 4px;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.notification::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    right: 50%;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #1e1520 transparent;
+}
+
+.notification::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: calc(50% - 10px);
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+}
+.notification-container {
+    position: relative;
+    display: inline-block;
+    margin-top: 10px;
+}
+.logo img {
+    max-width: 60px;
+    height: auto;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+}
+
+.menu li {
+    margin-right: 30px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+.menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.2s ease;
+}
+
+.menu li a.active::after,
+.menu li a:hover::after {
+    width: 100%;
+}
+#contact-dropdown {
+    background-color: #1e1520;
+    font-size: 16px;
+    color: white;
+    border: none;
+    outline: none;
+    width: 200px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+#contact-dropdown option {
+    background-color: #1e1520;
+    color: white;
+    cursor: pointer;
+}
+
+#contact-dropdown:focus {
+    outline: none;
+}
+.banner {
+    min-height: 590px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    background: url(image/banner.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.banner img {
+    display: none;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.banner-content {
+    max-width: 600px;
+    color: #fff;
+    z-index: 1;
+}
+
+.banner h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.banner p {
+    margin-top: 5%;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.banner .price {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.buttons .btn {
+    display: inline-block;
+    margin-top: 5%;
+    margin-left: 34%;
+    padding: 10px 40px;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(128, 128, 128, 1);
+    opacity: 0.8;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons .btn:hover {
+    background-color: rgba(128, 128, 128, 0.4);
+}
+
+.btn-buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.btn-consultation {
+    background-color: #333;
+}
+.contact-form input,
+.contact-form button {
+    display: block;
+    width: 70%;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.contact-form button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+}
+
+.contact-form button:hover {
+    background-color: black;
+}
+
+.contact-form button:active {
+    background-color: black;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 20% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+}
+.modal button{
+    cursor: pointer;
+}
+.modal h2 {
+    margin-bottom: 20px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
